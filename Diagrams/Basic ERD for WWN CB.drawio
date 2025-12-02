@@ -1,6 +1,6 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/142.0.0.0 Safari/537.36" version="29.2.2">
   <diagram name="Page-1" id="YKvs7XChMSsvTJ0nZ06L">
-    <mxGraphModel dx="1181" dy="630" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+    <mxGraphModel dx="1426" dy="743" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
@@ -40,7 +40,7 @@
         <mxCell id="1Efehvywetbe4ymQxn2K-28" edge="1" parent="1" source="1Efehvywetbe4ymQxn2K-12" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;startArrow=ERzeroToMany;startFill=0;endArrow=ERzeroToMany;endFill=0;" target="1Efehvywetbe4ymQxn2K-27" value="">
           <mxGeometry relative="1" as="geometry" />
         </mxCell>
-        <mxCell id="1Efehvywetbe4ymQxn2K-12" parent="1" style="whiteSpace=wrap;html=1;rounded=0;" value="Inventory" vertex="1">
+        <mxCell id="1Efehvywetbe4ymQxn2K-12" parent="1" style="whiteSpace=wrap;html=1;rounded=1;" value="Inventory" vertex="1">
           <mxGeometry height="60" width="120" x="390" y="280" as="geometry" />
         </mxCell>
         <mxCell id="1Efehvywetbe4ymQxn2K-24" edge="1" parent="1" source="1Efehvywetbe4ymQxn2K-4" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;endArrow=ERzeroToMany;endFill=0;startArrow=ERzeroToMany;startFill=0;" target="1Efehvywetbe4ymQxn2K-6" value="">
