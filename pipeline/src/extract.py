@@ -19,5 +19,5 @@ with pdfplumber.open(pdf_path) as pdf:
     raw_text = skill_list_start.extract_text() + " " + skill_list_end.extract_text()
 
     #Save text to interim folder
-    with open("data/interim/skills_raw.txt", "w", encoding="utf-8") as f:
+    with open("data/interim//text/skills_raw.txt", "w", encoding="utf-8") as f:
         f.write(raw_text)

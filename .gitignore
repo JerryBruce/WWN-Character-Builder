@@ -6,8 +6,9 @@
 
 # Data Security
 pipeline/data/raw/*.pdf
-pipeline/data/interim/*
-!**/data/**/.gitkeep
+pipeline/data/interim/**/*
+!pipeline/data/interim/**/
+!pipeline/data/interim/**/.gitkeep
 
 # OS specific
 .DS_Store
