@@ -1,37 +1,48 @@
 import re
 import json
+import os
+from config import BOOK_MAP
 
-skills_data_path = "data/interim//text/skills_raw.txt"
+def transform_all():
+    input_dir = "data/interim/text"
+    output_dir = "data/interim/json"
+    os.makedirs(output_dir, exist_ok=True)
 
-# Read the skills text
-with open(skills_data_path, "r", encoding="utf-8") as f:
-    raw_text = f.read()
+    for section, info in BOOK_MAP.items():
+        print(f"Transforming {section}...")
 
-# Defines the pattern
-skill_pattern = r"^([\w\s]+):\s*(.*)"
+        input_path = os.path.join(input_dir, info["raw_name"])
 
-# Group each skill
-all_skills = []
-current_skill = None
+        if not os.path.exists(input_path):
+            continue
 
-lines = raw_text.split('\n')
+        with open(input_path, "r", encoding="utf-8") as f:
+            lines = f.readlines()
 
-# Loop through each line of text
-for line in lines:
-    line = line.strip()
-    if not line: continue
+        cleaned_data = []
+        pattern = info["pattern"]
 
-    # Sets up the grouping
-    match = re.search(skill_pattern, line)
-    
-    if match:
-        all_skills.append({"name": match.group(1), "description": match.group(2)})
-    else:
-        if all_skills:
-            all_skills[-1]["description"] += " " + line
+        for line in lines:
+            line = line.strip()
+            if not line: continue
 
+            match = re.search(pattern, line)
+            
+            if match:
+                cleaned_data.append({
+                    "name": match.group(1).strip(),
+                    "description": match.group(2).strip()
+                })
+            else:
+                if cleaned_data:
+                    cleaned_data[-1]["description"] += " " + line
 
-with open("data/interim/json/skills_clean.json", "w", encoding="utf-8") as f:
-    json.dump(all_skills, f, indent=4, ensure_ascii=False)
-        
+        save_path = os.path.join(output_dir, info["clean_name"])
+        with open(save_path, "w", encoding="utf-8") as f:
+            json.dump(cleaned_data, f, indent=4, ensure_ascii=False)
+
+        print(f"Finished {section}  -> {save_path}")
+
+if __name__ == "__main__":
+    transform_all()
 
