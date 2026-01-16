@@ -10,6 +10,10 @@ pipeline/data/interim/**/*
 !pipeline/data/interim/**/
 !pipeline/data/interim/**/.gitkeep
 
+#Notebook clutter
+**/.ipynb_checkpoints
+.virtual_documents/
+
 # OS specific
 .DS_Store
 Thumbs.db
