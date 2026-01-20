@@ -17,7 +17,7 @@ def extract_content():
                 text = crop.extract_text()
                 if text:
                     combined_text.append(text)
-            char = info.get("join_char", "/n")
+            char = info.get("join_char", "\n")
             final_text = char.join(combined_text)
 
             save_path = os.path.join(output_dir, info["raw_name"])
